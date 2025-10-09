@@ -101,19 +101,19 @@ text
 
 ---
 ## UI/UX
-<img width="938" height="427" alt="image" src="https://github.com/user-attachments/assets/e95da65e-83df-419d-8e84-0a99b028a6c7" />
-<img width="931" height="428" alt="image" src="https://github.com/user-attachments/assets/2f07d9c8-bf76-4e7e-acf6-c90f57c9e11c" />
-<img width="538" height="362" alt="image" src="https://github.com/user-attachments/assets/2f07dff9-58c6-4879-aabe-7dea2a76ab63" />
-<img width="925" height="422" alt="image" src="https://github.com/user-attachments/assets/8a327f81-3e99-4e7d-ae58-ea31315a0ad4" />
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img width="180" height="82" alt="image" src="https://github.com/user-attachments/assets/e95da65e-83df-419d-8e84-0a99b028a6c7" />
+  <img width="180" height="83" alt="image" src="https://github.com/user-attachments/assets/2f07d9c8-bf76-4e7e-acf6-c90f57c9e11c" />
+  <img width="180" height="70" alt="image" src="https://github.com/user-attachments/assets/8031da5f-1894-4633-80d4-88b29e5fb589" />
+  <img width="180" height="121" alt="image" src="https://github.com/user-attachments/assets/2f07dff9-58c6-4879-aabe-7dea2a76ab63" />
+  <img width="180" height="82" alt="image" src="https://github.com/user-attachments/assets/8a327f81-3e99-4e7d-ae58-ea31315a0ad4" />
+</div>
 
 
-
-
-
-
+---
 ## 🗂️ Updating Festival/Event Data
 
-Update festival information by replacing/updating `festivals.xlsx` file in the `public` directory. Supported data columns:
+Update festival information by replacing/updating `sikkim_festivals_full.xlsx` file in the `public` directory. Supported data columns:
 `id, name, startDate, endDate, location, description, type, img`
 
 *Tip: For best results, ensure column headers are precise and date fields use ISO format.*
