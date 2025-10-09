@@ -15,7 +15,8 @@ const features = [
     title: "Multilingual Guides",
     description: "Audio/text tours in English, Hindi, Nepali, and Dzongkha.",
     color: "text-secondary",
-    link: "/multilingual-tours",
+    link: "http://127.0.0.1:8080/index.html",  // Replace index.html if different entry file
+    external: true,
   },
   {
     icon: Calendar,

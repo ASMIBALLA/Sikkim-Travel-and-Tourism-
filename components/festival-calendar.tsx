@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { ChevronLeft, ChevronRight, Search, Download, Calendar, MapPin, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import * as XLSX from "xlsx";
+
 
 interface Festival {
   id: number
@@ -107,9 +109,9 @@ const typeColors = {
 }
 
 const typeLabels = {
-  religious: "Religious",
-  cultural: "Cultural",
-  music: "Music",
+  religious: "religious",
+  cultural: "cultural",
+  music: "music",
 }
 
 const months = [
@@ -138,32 +140,53 @@ export function FestivalCalendar() {
 
   const today = new Date()
 
-  // Fetch festivals from Google Sheets CSV
-  useEffect(() => {
-    const fetchFestivals = async () => {
-      try {
-        const res = await fetch("/api/festivals")
-        const data = await res.json()
-        const mappedFestivals: Festival[] = data.map((f: any, idx: number) => ({
-          id: festivals.length + idx + 1,
-          name: f["Festival Name"] || f.name,
-          startDate: f.Date || f.startDate,
-          endDate: f.EndDate || f.endDate,
-          location: f.Location || "Unknown",
-          type: f.Type?.toLowerCase() as "religious" | "cultural" | "music" || "cultural",
-          description: f.Description || "",
-        }))
-        setDynamicFestivals(mappedFestivals)
-      } catch (err) {
-        console.error("Failed to fetch festivals:", err)
-      }
-    }
 
-    fetchFestivals()
+  useEffect(() => {
+    const loadFestivalsFromXLSX = async () => {
+      try {
+        // Adjust filename if needed
+        const response = await fetch("/sikkim_festivals_full.xlsx");
+        const arrayBuffer = await response.arrayBuffer();
+
+        const workbook = XLSX.read(arrayBuffer, { type: "array" });
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const jsonData = XLSX.utils.sheet_to_json(sheet);
+        const cleanDate = (d: string) => d.split(' ')[0] || d;
+
+
+        const festivalsFromExcel = jsonData.map((f: any, idx: number) => ({
+          id: f["id"] || f["ID"],
+          name: f["name"] || f["Name"],
+          startDate: (typeof f["startDate"] === "string"
+            ? f["startDate"].trim().split(" ")[0]
+            : f["startDate"]) || (typeof f["StartDate"] === "string"
+            ? f["StartDate"].trim().split(" ")[0]
+            : f["StartDate"]),
+          endDate: (typeof f["endDate"] === "string"
+            ? f["endDate"].trim().split(" ")[0]
+            : f["endDate"]) || f["startDate"],
+          location: f["location"] || f["Location"],
+          type: (f["type"] || f["Type"] || "cultural").toString().toLowerCase(),
+          description: f["description"] || f["Description"] || "",
+          img: f["img"] || f["Img"],
+        }));
+
+
+        setDynamicFestivals(festivalsFromExcel);
+      } catch (err) {
+        console.error("Error loading XLSX:", err);
+      }
+    };
+
+    loadFestivalsFromXLSX();
   }, [])
 
+
   // Merge hardcoded and dynamic festivals
-  const allFestivals = useMemo(() => [...festivals, ...dynamicFestivals], [dynamicFestivals])
+  const allFestivals = useMemo(
+    () => [...festivals, ...dynamicFestivals],
+    [dynamicFestivals]
+  )
 
   // Filter festivals based on search & type
   const filteredFestivals = useMemo(() => {
@@ -178,7 +201,6 @@ export function FestivalCalendar() {
 
   // Get festivals for a specific date
   const getFestivalsForDate = (date: Date) => {
-    const dateStr = date.toISOString().split("T")[0]
     return filteredFestivals.filter((festival) => {
       const startDate = new Date(festival.startDate)
       const endDate = festival.endDate ? new Date(festival.endDate) : startDate

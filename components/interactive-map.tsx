@@ -7,9 +7,13 @@ import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster";
 import "leaflet-control-geocoder";
 
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
+
+import { useRouter } from 'next/navigation';
+
 
 // Fix Leaflet marker icon paths
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -252,23 +256,34 @@ export default function InteractiveMap({ height = "80vh" }: { height?: string })
                   <p className="text-sm text-muted-foreground mb-1">{selected.town}</p>
                   <p className="text-muted-foreground mb-1">{selected.desc}</p>
                   <p className="text-sm font-medium">{selected.visiting}</p>
-                  <a
-                    href={selected.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-2 px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                  >
-                    More Info
-                  </a>
+                  
+                  <div className="mt-2 flex space-x-2">
+                    <a
+                      href={selected.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    >
+                      More Info
+                    </a>
+                    
+                    <button
+                      onClick={() => window.open('/travel', '_blank', 'noopener,noreferrer')}
+                      className="px-3 py-1 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+                    >
+                      Book
+                    </button>
+                  </div>
                 </div>
+
                 <button
                   onClick={() => setSelected(null)}
                   className="text-muted-foreground hover:text-foreground transition-colors p-1"
+                  aria-label="Close"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-
               {/* Coordinates */}
               <Badge className="mt-3">{selected.coordinates.join(", ")}</Badge>
             </div>
