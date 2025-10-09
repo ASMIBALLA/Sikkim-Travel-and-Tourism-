@@ -101,10 +101,8 @@ text
 
 ---
 ## UI/UX
-<img width="931" height="385" alt="image" src="https://github.com/user-attachments/assets/a18e891e-ca3a-4fa4-941e-5ccc57d0ad6a" />
 <img width="938" height="427" alt="image" src="https://github.com/user-attachments/assets/e95da65e-83df-419d-8e84-0a99b028a6c7" />
 <img width="931" height="428" alt="image" src="https://github.com/user-attachments/assets/2f07d9c8-bf76-4e7e-acf6-c90f57c9e11c" />
-<img width="930" height="383" alt="image" src="https://github.com/user-attachments/assets/5ae70cc5-c237-4b2f-8d07-ab35cb9697b1" />
 <img width="538" height="362" alt="image" src="https://github.com/user-attachments/assets/2f07dff9-58c6-4879-aabe-7dea2a76ab63" />
 <img width="925" height="422" alt="image" src="https://github.com/user-attachments/assets/8a327f81-3e99-4e7d-ae58-ea31315a0ad4" />
 
