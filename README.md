@@ -39,7 +39,7 @@ A feature-rich, interactive web platform for exploring Sikkim's monasteries, fes
 - **Styling:** Tailwind CSS
 - **Data Handling:** XLSX (SheetJS) for Excel importing, dynamic API integration
 - **State Management:** React hooks
-- **Mapping:** Leaflet/Mapbox/Custom Solution (specify if needed)
+- **Mapping:** Leaflet/Mapbox/Custom Solution
 - **Version Control:** git + GitHub
 
 ---
