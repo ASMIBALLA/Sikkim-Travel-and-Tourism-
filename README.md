@@ -58,7 +58,7 @@ npm install
 text
 
 3. Set up festival data:
-   - Place `festivals.xlsx` (or your festival data file) into `/public`
+   - Place `sikkim_festivals_full.xlsx` (or your festival data file) into `/public`
 
 4. Start the development server:
 npm run dev
