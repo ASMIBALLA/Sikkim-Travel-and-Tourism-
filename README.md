@@ -39,7 +39,11 @@ A feature-rich, interactive web platform for exploring Sikkim's monasteries, fes
 - **Styling:** Tailwind CSS
 - **Data Handling:** XLSX (SheetJS) for Excel importing, dynamic API integration
 - **State Management:** React hooks
+<<<<<<< HEAD
 - **Mapping:** Leaflet/Mapbox/Custom Solution (specify if needed)
+=======
+- **Mapping:** Leaflet/Mapbox/Custom Solution
+>>>>>>> 2ec3bf30089cc2c12b50e935d4607dd67f059d78
 - **Version Control:** git + GitHub
 
 ---
@@ -58,7 +62,11 @@ npm install
 text
 
 3. Set up festival data:
+<<<<<<< HEAD
    - Place `festivals.xlsx` (or your festival data file) into `/public`
+=======
+   - Place `sikkim_festivals_full.xlsx` (or your festival data file) into `/public`
+>>>>>>> 2ec3bf30089cc2c12b50e935d4607dd67f059d78
 
 4. Start the development server:
 npm run dev
@@ -100,10 +108,30 @@ text
 - **MapModal:** Full-screen map display for deep exploration.
 
 ---
+<<<<<<< HEAD
 
 ## 🗂️ Updating Festival/Event Data
 
 Update festival information by replacing/updating `festivals.xlsx` file in the `public` directory. Supported data columns:
+=======
+## UI/UX
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <div style="flex: 0 0 48%;"><img width="100%" alt="image1" src="https://github.com/user-attachments/assets/e95da65e-83df-419d-8e84-0a99b028a6c7" /></div>
+  <div style="flex: 0 0 48%;"><img width="100%" alt="image2" src="https://github.com/user-attachments/assets/2f07d9c8-bf76-4e7e-acf6-c90f57c9e11c" /></div>
+
+  <div style="flex: 0 0 48%;"><img width="100%" alt="image3" src="https://github.com/user-attachments/assets/8031da5f-1894-4633-80d4-88b29e5fb589" /></div>
+  <div style="flex: 0 0 48%;"><img width="100%" alt="image4" src="https://github.com/user-attachments/assets/2f07dff9-58c6-4879-aabe-7dea2a76ab63" /></div>
+
+  <div style="flex: 0 0 48%;"><img width="100%" alt="image5" src="https://github.com/user-attachments/assets/8a327f81-3e99-4e7d-ae58-ea31315a0ad4" /></div>
+</div>
+
+
+
+---
+## 🗂️ Updating Festival/Event Data
+
+Update festival information by replacing/updating `sikkim_festivals_full.xlsx` file in the `public` directory. Supported data columns:
+>>>>>>> 2ec3bf30089cc2c12b50e935d4607dd67f059d78
 `id, name, startDate, endDate, location, description, type, img`
 
 *Tip: For best results, ensure column headers are precise and date fields use ISO format.*
@@ -147,4 +175,8 @@ For questions, suggestions, or partnership:
 
 ---
 
+<<<<<<< HEAD
 **This project celebrates Sikkim’s vibrant culture and enables seamless travel planning for all!**
+=======
+**This project celebrates Sikkim’s vibrant culture and enables seamless travel planning for all!**
+>>>>>>> 2ec3bf30089cc2c12b50e935d4607dd67f059d78
