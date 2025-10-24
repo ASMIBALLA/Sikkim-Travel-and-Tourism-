@@ -1,23 +1,16 @@
-"use client"; // make sure this is at the very top
-
-import Image from "next/image"
-
-import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
-import { MonasteryCard } from "@/components/monastery-card";
-import { FeaturesSection } from "@/components/features-section";
-import InteractiveMap from "@/components/interactive-map";
-import { FestivalCalendar } from "@/components/festival-calendar";
-
-import { CommunitySection } from "@/components/community-section";
-import { FloatingClouds } from "@/components/floating-clouds";
-import  {AIHeritageGuide} from "@/components/ai-heritage-guide";
-
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Chatbot from "@/components/chatbot";
-import { Search, Download, ArrowRight, Mountain } from "lucide-react";
+import { Navigation } from "@/components/navigation"
+import { HeroSection } from "@/components/hero-section"
+import { MonasteryCard } from "@/components/monastery-card"
+import { FeaturesSection } from "@/components/features-section"
+import InteractiveMap from "@/components/interactive-map"
+import { FestivalCalendar } from "@/components/festival-calendar"
+import { CommunitySection } from "@/components/community-section"
+import { FloatingClouds } from "@/components/floating-clouds"
+import { AIHeritageGuide } from "@/components/ai-heritage-guide"
+import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Search, Download, ArrowRight, Mountain } from "lucide-react"
 
 const featuredTours = [
   {
@@ -44,7 +37,7 @@ const featuredTours = [
     tags: ["Cham", "Festival", "Culture"],
     description: "Pilgrimage site known for Bumchu's sacred water ritual.",
   },
-];
+]
 
 export default function Home() {
   return (
@@ -90,7 +83,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Original Festival Calendar Section */}
+      {/* Festival Calendar Section */}
       <section id="festivals" className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4">
           <FestivalCalendar />
@@ -139,8 +132,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 bg-gradient-to-br from-primary/5 to-background border-t border-border/50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12">
-            {/* Branding */}
+          <div className="grid md:grid-cols-3 gap-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-primary/10 p-2 rounded-xl">
@@ -153,7 +145,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Links */}
             <div>
               <h4 className="font-bold text-foreground mb-4">Links</h4>
               <div className="space-y-2">
@@ -172,26 +163,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Acknowledgments */}
             <div>
               <h4 className="font-bold text-foreground mb-4">Acknowledgments</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Created for a tourism innovation concept. Respectful collaboration with licensed monasteries and
                 cultural institutions.
               </p>
-            </div>
-
-            {/* QR Code */}
-            <div className="flex flex-col items-center">
-              <h4 className="font-bold text-foreground mb-4">Scan QR</h4>
-              <Image
-                src="/qr.jpg"
-                alt="QR Code"
-                width={120}
-                height={120}
-                className="rounded-md shadow-md"
-              />
-              <p className="text-xs text-muted-foreground mt-2">Download Brochure</p>
             </div>
           </div>
 
@@ -202,7 +179,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
     </main>
-  );
+  )
 }
